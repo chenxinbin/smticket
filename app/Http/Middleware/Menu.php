@@ -46,7 +46,7 @@ class Menu
             return $next($request);
 
 
-        $pm = Cache::rememberForever("MENU_PERM_ARR2", function() {
+        $pm = Cache::rememberForever("MENU_PERM_ARR3", function() {
             $_pm = [];
             $permissions = DB::table("permissions")->get();
             foreach($permissions as $p)
