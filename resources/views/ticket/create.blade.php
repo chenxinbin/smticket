@@ -1,6 +1,6 @@
 @extends('layouts.material')
 
-@section('title', '概览')
+@section('title', '新建工单')
 
 @section('content')
                  <!-- ============================================================== -->
@@ -49,7 +49,8 @@
                         <div class="col-lg-12">
                             <div class="card card-outline-info">
                                 <div class="card-body">
-                                    <form action="#" class="form-horizontal">
+                                    <form method="POST" class="form-horizontal">
+                                        {{ csrf_field() }}
                                         <div class="form-body">
                                             <h3 class="box-title">客户信息</h3>
                                             <hr class="m-t-0 m-b-40">
@@ -58,7 +59,7 @@
                                                     <div class="form-group row">
                                                         <label class="control-label text-right col-md-4">姓名</label>
                                                         <div class="col-md-8">
-                                                            <input type="text" class="form-control" placeholder="John doe">
+                                                            <input type="text" class="form-control" name="truename">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -67,7 +68,7 @@
                                                     <div class="form-group row">
                                                         <label class="control-label text-right col-md-4">来源</label>
                                                         <div class="col-md-8">
-                                                            <select class="form-control custom-select">
+                                                            <select class="form-control custom-select" name="source">
                                                                 <option value="0">请选择</option>
                                                                 <option value="1">淘宝店铺</option>
                                                                 <option value="2">公众号</option>
@@ -87,7 +88,7 @@
                                                     <div class="form-group row">
                                                         <label class="control-label text-right col-md-4">公司</label>
                                                         <div class="col-md-8">
-                                                            <input type="text" class="form-control">
+                                                            <input type="text" class="form-control" name="company">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -96,7 +97,7 @@
                                                     <div class="form-group row">
                                                         <label class="control-label text-right col-md-4">性别</label>
                                                         <div class="col-md-8">
-                                                            <select class="form-control custom-select">
+                                                            <select class="form-control custom-select" name="sex">
                                                                 <option value="0">请选择</option>
                                                                 <option value="1">男</option>
                                                                 <option value="2">女</option>
@@ -112,7 +113,7 @@
                                                         <div class="form-group row">
                                                             <label class="control-label text-right col-md-4">电话</label>
                                                             <div class="col-md-8">
-                                                                <input type="text" class="form-control form-control-danger" placeholder="">
+                                                                <input type="text" class="form-control form-control-danger" name="phone" placeholder="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -121,7 +122,7 @@
                                                         <div class="form-group row">
                                                             <label class="control-label text-right col-md-4">微信/QQ</label>
                                                             <div class="col-md-8">
-                                                                <input type="text" class="form-control" placeholder="">
+                                                                <input type="text" class="form-control"  name="qq" placeholder="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -131,7 +132,7 @@
                                             <div class="form-group row">
                                                     <label class="control-label text-right col-md-2">其他信息</label>
                                                     <div class="col-md-10">
-                                                        <input type="text" placeholder="small" class="form-control">
+                                                        <input type="text" placeholder="small"  name="remark" class="form-control">
                                                     </div>
                                                 </div>
                                             <!--/row-->
@@ -151,9 +152,11 @@
                                                     <div class="form-group row">
                                                         <label class="control-label text-right col-md-4">优先级</label>
                                                         <div class="col-md-8">
-                                                                <select class="form-control custom-select">
-                                                                    <option value="1">普通</option>
-                                                                    </select>
+                                                                <select class="form-control custom-select" name="priority_id">
+                                                                    @foreach ($priorities as $k=>$v)
+                                                                        <option value="{{$k}}">{{$v}}</option>
+                                                                    @endforeach
+                                                                </select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -165,10 +168,12 @@
                                                     <div class="form-group row">
                                                         <label class="control-label text-right col-md-4">类型</label>
                                                         <div class="col-md-8">
-                                                                <select class="form-control custom-select">
-                                                                        <option value="1">男</option>
-                                                                        <option value="2">女</option>
-                                                                    </select>
+                                                                <select class="form-control custom-select"  name="topic_id">
+                                                                        <option value="0">请选择</option>
+                                                                    @foreach ($topics as $k=>$v)    
+                                                                    <option value="{{$k}}">{{$v}}</option>
+                                                                    @endforeach
+                                                                </select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -176,7 +181,7 @@
                                                     <div class="form-group row">
                                                         <label class="control-label text-right col-md-4">预算</label>
                                                         <div class="col-md-8">
-                                                            <input type="text" class="form-control">
+                                                            <input type="text" class="form-control" name="budget">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -185,9 +190,9 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group row">
-                                                        <label class="control-label text-right col-md-2">关键词</label>
+                                                        <label class="control-label text-right col-md-2">标签</label>
                                                         <div class="col-md-10">
-                                                            <input type="text" class="form-control">
+                                                            <input type="text" class="form-control" name="tag">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -199,7 +204,7 @@
                                                     <div class="form-group row">
                                                         <label class="control-label text-right col-md-2">详情</label>
                                                         <div class="col-md-10">
-                                                            <textarea name="remark" class="form-control" rows="3" placeholder="写点备注在这里，比如供货方的信息 ..."></textarea>
+                                                            <textarea name="message" class="form-control" rows="3" placeholder="写点备注在这里，比如供货方的信息 ..."></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
