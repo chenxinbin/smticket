@@ -59,16 +59,24 @@
                                                         <label class="control-label text-right col-md-4">姓名</label>
                                                         <div class="col-md-8">
                                                             <input type="text" class="form-control" placeholder="John doe">
-                                                            <small class="form-control-feedback"> This is inline help </small> </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <!--/span-->
                                                 <div class="col-md-6">
-                                                    <div class="form-group has-danger row">
-                                                        <label class="control-label text-right col-md-4">公司</label>
+                                                    <div class="form-group row">
+                                                        <label class="control-label text-right col-md-4">来源</label>
                                                         <div class="col-md-8">
-                                                            <input type="text" class="form-control form-control-danger" placeholder="12n">
-                                                            <small class="form-control-feedback"> This field has error. </small> </div>
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">请选择</option>
+                                                                <option value="1">淘宝店铺</option>
+                                                                <option value="2">公众号</option>
+                                                                <option value="3">朋友介绍</option>
+                                                                <option value="4">电话外呼</option>
+                                                                <option value="5">电话来访</option>
+                                                                <option value="6">其他</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <!--/span-->
@@ -77,21 +85,22 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group row">
-                                                        <label class="control-label text-right col-md-4">性别</label>
+                                                        <label class="control-label text-right col-md-4">公司</label>
                                                         <div class="col-md-8">
-                                                            <select class="form-control custom-select">
-                                                                <option value="1">男</option>
-                                                                <option value="2">女</option>
-                                                            </select>
-                                                            <small class="form-control-feedback"> Select your gender. </small> </div>
+                                                            <input type="text" class="form-control">
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <!--/span-->
                                                 <div class="col-md-6">
                                                     <div class="form-group row">
-                                                        <label class="control-label text-right col-md-4">生日</label>
+                                                        <label class="control-label text-right col-md-4">性别</label>
                                                         <div class="col-md-8">
-                                                            <input type="date" class="form-control" placeholder="yyyy-mm-dd">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">请选择</option>
+                                                                <option value="1">男</option>
+                                                                <option value="2">女</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -103,8 +112,8 @@
                                                         <div class="form-group row">
                                                             <label class="control-label text-right col-md-4">电话</label>
                                                             <div class="col-md-8">
-                                                                <input type="text" class="form-control form-control-danger" placeholder="12n">
-                                                                <small class="form-control-feedback"> Select your gender. </small> </div>
+                                                                <input type="text" class="form-control form-control-danger" placeholder="">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <!--/span-->
@@ -123,7 +132,7 @@
                                                     <label class="control-label text-right col-md-2">其他信息</label>
                                                     <div class="col-md-10">
                                                         <input type="text" placeholder="small" class="form-control">
-                                                        <small class="form-control-feedback"> This is inline help </small> </div>
+                                                    </div>
                                                 </div>
                                             <!--/row-->
                                             <h3 class="box-title">需求信息</h3>
@@ -140,11 +149,10 @@
                                                 <!--/span-->
                                                 <div class="col-md-6">
                                                     <div class="form-group row">
-                                                        <label class="control-label text-right col-md-4">状态</label>
+                                                        <label class="control-label text-right col-md-4">优先级</label>
                                                         <div class="col-md-8">
                                                                 <select class="form-control custom-select">
-                                                                        <option>Country 1</option>
-                                                                        <option>Country 2</option>
+                                                                    <option value="1">普通</option>
                                                                     </select>
                                                         </div>
                                                     </div>
